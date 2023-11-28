@@ -1,11 +1,8 @@
 from django.contrib import admin
 from .models import Tipo, Segmento, UserProfile
-from .models import Tipo,Segmento,Evento
+from .models import Tipo,Segmento,Evento,UserProfile
 
-admin.site.register(Tipo)
-admin.site.register(Segmento)
-admin.site.register(Evento)
-# Register your models here.
+
 
 
 
@@ -16,3 +13,4 @@ admin.site.register(Evento)
 admin.site.register(Tipo)
 admin.site.register(Segmento)
 admin.site.register(UserProfile)
+admin.site.register(Evento)

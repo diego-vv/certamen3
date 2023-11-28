@@ -75,16 +75,17 @@
                   <th>Segmento</th>
                 </tr>
               </thead>
-
+              {% for evento in Evento %}
               <tbody>
                 <tr>
-                  <td>FF</td>
-                  <td>Fe</td>
-                  <td>Fr</td>
-                  <td>Ft</td>
-                  <td>Fy</td>
+                  <td>{{ evento.id}}</td>
+                  <td>{{ evento.fecha_inicio }}</td>
+                  <td>{{ evento.fecha_termino }}</td>
+                  <td>{{ evento.tipo }}</td>
+                  <td>{{ evento.segmento }}</td>
                 </tr>
               </tbody>
+              {% endfor %}
             </table>
           </div>
         </div>

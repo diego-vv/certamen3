@@ -2,16 +2,18 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
-from .models import UserProfile, Segmento, Tipo
+from .models import UserProfile, Segmento, Tipo,Evento
 
 def index (request):
 
     segmentos = Segmento.objects.all()
     tipos = Tipo.objects.all()
+    evento = Evento.objects.all()
 
     return render(request,'myapp/index.html',{
         "Segmentos": segmentos,
-        "Tipos":tipos
+        "Tipos":tipos,
+        "Evento":evento
     })
 
 
@@ -53,5 +55,14 @@ def login_view(request):
     return render(request, 'myapp/login.html')
 
 def sus (request):
+    segmentos = Segmento.objects.all()
+    tipos = Tipo.objects.all()
+    evento = Evento.objects.all()
 
-    return render(request,'myapp/SU.html')
+    return render(request,'myapp/SU.html',{
+        "Segmentos": segmentos,
+        "Tipos":tipos,
+        "Evento":evento
+    })
+
+
