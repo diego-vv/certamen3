@@ -1,6 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
+<<<<<<< HEAD
 
+=======
+>>>>>>> d807a358e5174107db9d24b782f401c2d6b6e82e
 class Tipo(models.Model):
     nombre = models.CharField(max_length=50, unique=True)  #Unique = true; indica que el dato es unico en la tabla 
 
