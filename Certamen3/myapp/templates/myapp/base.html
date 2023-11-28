@@ -13,80 +13,89 @@
     />
   </head>
   <body>
-    <div class="d-flex">
-      <img
-        src="{% static 'myapp/img/version horizontal.jpg' %}"
-        id="imagen"
-        class="img-fluid"
-      />
-      <img
-        src="{% static 'myapp/img/calendario.jpg' %}"
-        id="imagen2"
-        class="img-fluid"
-      />
-    </div>
 
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-6 gx-5">
-          <select class="form-select" aria-label="Default select example">
-            <option selected>Segmento</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-        </div>
+    {% block content %}
+    
+      <div class="d-flex">
+        <img
+          src="{% static 'myapp/img/version horizontal.jpg' %}"
+          id="imagen"
+          class="img-fluid"
+        />
+        <img
+          src="{% static 'myapp/img/calendario.jpg' %}"
+          id="imagen2"
+          class="img-fluid"
+        />
+      </div>
 
-        <div class="col-6 gx-5">
-          <select class="form-select" aria-label="Default select example">
-            <option selected>Tipo</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
+      {% block contenido_adicional %}
+      {% endblock %}
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-6 gx-5">
+            <select class="form-select" aria-label="Default select example">
+              <option value="" disabled selected>Segmento</option>
+              {% for segmento in Segmentos %}
+                <option value="1">{{ segmento.nombre }}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+          <div class="col-6 gx-5">
+            <select class="form-select" aria-label="Default select example">
+              <option value="" disabled selected>Tipo</option>
+              {% for tipo in Tipos %}
+                <option value="1">{{ tipo.nombre }}</option>
+              {% endfor %}
+            </select>
+          </div>
         </div>
       </div>
-    </div>
 
-    <br />
+      <br />
 
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <table class="table table-bordered text-center">
-            <thead>
-              <tr>
-                <th colspan="5">Actividades</th>
-              </tr>
-            </thead>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <table class="table table-bordered text-center">
+              <thead>
+                <tr>
+                  <th colspan="5">Actividades</th>
+                </tr>
+              </thead>
 
-            <thead>
-              <tr>
-                <th>Hito</th>
-                <th>Fecha Inicio</th>
-                <th>Fecha Término</th>
-                <th>Tipo</th>
-                <th>Segmento</th>
-              </tr>
-            </thead>
+              <thead>
+                <tr>
+                  <th>Hito</th>
+                  <th>Fecha Inicio</th>
+                  <th>Fecha Término</th>
+                  <th>Tipo</th>
+                  <th>Segmento</th>
+                </tr>
+              </thead>
 
-            <tbody>
-              <tr>
-                <td>FF</td>
-                <td>Fe</td>
-                <td>Fr</td>
-                <td>Ft</td>
-                <td>Fy</td>
-              </tr>
-            </tbody>
-          </table>
+              <tbody>
+                <tr>
+                  <td>FF</td>
+                  <td>Fe</td>
+                  <td>Fr</td>
+                  <td>Ft</td>
+                  <td>Fy</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
-    </div>
 
-    <footer class="text-center mt-4 bg-primary text-white p-3">
+      <footer class="text-center mt-4 bg-primary text-white p-3">
         <p>Universidad Técnico Federico Santa María</p>
-    </footer>
+      </footer>
+
+    {% endblock %}
 
   </body>
+
 </html>
