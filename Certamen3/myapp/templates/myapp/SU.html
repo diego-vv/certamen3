@@ -1,41 +1,25 @@
 {% extends 'myapp/base.html' %} {% block contenido_adicional %}
 <!-- Aquí puedes agregar tu contenido específico, como las tarjetas -->
+<h1>Proximos eventos</h1>
 <div class="container d-flex flex-row">
+  {% for evento in Evento %}
   <div class="card-container me-3 mb-4">
     <div class="card mx-auto" style="max-width: 18rem;">
       <div class="card-body">
-        <h5 class="card-title">23</h5>
-        <h6 class="card-subtitle mb-2 text-body-secondary">Marzo</h6>
+        <h5 class="card-title">{{evento.fecha_inicio.day}}</h5>
+        <h6 class="card-subtitle mb-2 text-body-secondary">{{evento.fecha_inicio|date:"F"}}</h6>
         <p class="card-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, ut.
+          {{evento.descripcion}}
         </p>
       </div>
     </div>
   </div>
+  {% endfor %}
 
-  <div class="card-container me-3 mb-4">
-    <div class="card mx-auto" style="max-width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title">23</h5>
-        <h6 class="card-subtitle mb-2 text-body-secondary">Marzo</h6>
-        <p class="card-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, ut.
-        </p>
-      </div>
-    </div>
-  </div>
 
-  <div class="card-container me-3 mb-4">
-    <div class="card mx-auto" style="max-width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title">23</h5>
-        <h6 class="card-subtitle mb-2 text-body-secondary">Marzo</h6>
-        <p class="card-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, ut.
-        </p>
-      </div>
-    </div>
-  </div>
+
+  
+
 </div>
 
 {% endblock %}
